@@ -1,3 +1,5 @@
+using Sigma.Task.Application;
+using Sigma.Task.Infrastructure;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +8,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//inject dependency from other projects
+builder.Services.AddApplicationDI();
+builder.Services.AddInfrastructureDI(builder.Configuration);
 
 var app = builder.Build();
 

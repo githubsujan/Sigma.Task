@@ -9,7 +9,7 @@ namespace Sigma.Task.Infrastructure
 {
     public static class DependencyInjectionExtension
     {
-        public static IServiceCollection AddInfratructureDI(IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddInfrastructureDI(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped<ICandidateRepository, CandidateRepository>();
             services.AddDbContext<AppDbContext>(options =>
