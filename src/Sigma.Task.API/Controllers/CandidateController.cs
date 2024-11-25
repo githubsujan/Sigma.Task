@@ -27,7 +27,7 @@ namespace Sigma.Task.API.Controllers
         }
 
         [HttpPost("SaveCandidate")]
-        public async Task<IActionResult> SaveCandidate([FromBody] CandidateDTO candidateDTO)
+        public async Task<IActionResult> SaveCandidateAysnc([FromBody] CandidateDTO candidateDTO)
         {
             var result = await _sender.Send(new SaveCandidateCommand(candidateDTO));
             return Ok(result);

@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using MediatR;
+﻿using MediatR;
 
 using Sigma.Task.Application.DTOs;
-using Sigma.Task.Core.Entities;
 using Sigma.Task.Core.Interfaces;
 
 namespace Sigma.Task.Application.Queries
@@ -32,6 +25,7 @@ namespace Sigma.Task.Application.Queries
             {
                 candidateDTOs.Add(new CandidateDTO
                 {
+                    Id = candidate.Id,
                     FirstName = candidate.FirstName,
                     LastName = candidate.LastName,
                     PhoneNumber = candidate.PhoneNumber,
@@ -39,7 +33,9 @@ namespace Sigma.Task.Application.Queries
                     CallSchedule = candidate.CallSchedule,
                     LinkedInProfile = candidate.LinkedInProfile,
                     GitHubProfile = candidate.GitHubProfile,
-                    Comment = candidate.Comment
+                    Comment = candidate.Comment,
+                    CreatedDate = candidate.CreatedDate,
+                    LastUpdatedDate = candidate.LastUpdatedDate
                 });
             }
             return candidateDTOs;
